@@ -1,7 +1,7 @@
 {
-  "name": "Kitzia-MD",
+  "name": "SimpleMD",
   "description": "whatsapp md bot build with nodejs",
-  "repository": "https://github.com/CarlosTwT/MdSIMPLE",
+  "repository": "https://github.com/CarlosTwT/SimpleMD",
   "logo": "",
   "keywords": ["nodejs", "bot", "whatsapp bot", "whatsapp automation", "multi device"],
   "stack": "container",
