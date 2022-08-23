@@ -9,7 +9,7 @@
     "format": "prettier --write '**/*.{md,js,json}'"
   },
   "dependencies": {
-    "@adiwajshing/baileys": "github:brunoSobrino/baileys",
+    "@adiwajshing/baileys": "^4.4.0",
     "@adiwajshing/keyed-db": "^0.2.4",
     "@vitalets/google-translate-api": "^7.0.0",
     "@hapi/boom": "^9.1.4",
@@ -19,6 +19,7 @@
     "brainly-scraper-v2": "1.1.2",
     "bluebird": "^3.7.2",
     "caliph-api": "^0.8.6",
+    "cfonts": "^2.9.0",
     "chalk": "4.1.2",
     "cheerio": "1.0.0-rc.10",
     "country-language": "^0.1.7",

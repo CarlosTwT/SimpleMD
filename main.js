@@ -6,6 +6,7 @@ const log = (pino = require("pino"));
 const cron = require("node-cron");
 const moment = require("moment");
 const chalk = require('chalk')
+const CFonts = require('cfonts');
 const figlet = require('figlet')
 const { color } = require("./lib/function")
 const utils = require("./lib/utils");
@@ -111,10 +112,12 @@ const connect = async() => {
 async function start(){
   let { version, isLatest } = await fetchLatestBaileysVersion();
   
-  let data = fs.readFileSync(path.join(__dirname, "doom.flf"), "utf8");
   console.clear();
-  console.log(color('------------------------------------------------------------------------', 'white'))
-  console.log(color(figlet.textSync('Simple', { font: 'doom', horizontalLayout: 'default' }, data)))
+  CFonts.say(`DEVS`, {
+              font: '3D',
+              align: 'left',
+              gradient: ['red', 'magenta']
+          })
   console.log(color('------------------------------------------------------------------------', 'white'))
   console.log(color('[Creador]', 'aqua'), color(config.author, 'magenta'))
   console.log(color('[BOT]', 'aqua'), color('BOT Online!', 'magenta'))
