@@ -173,9 +173,6 @@ module.exports = handler = async (mek, conn, map) => {
 		  await require("./lib/function/blacklist")(msg, conn);
 		}
 		
-       // [ Anonymous ]
-       require("./lib/function/anonymous")(msg,conn);
-       
   // [ Afk ]
   if(isGroup){
       await require("./lib/function/afk")(msg,conn);
