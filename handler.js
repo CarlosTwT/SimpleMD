@@ -175,8 +175,7 @@ module.exports = handler = async (mek, conn, map) => {
 		
        // [ Anonymous ]
        require("./lib/function/anonymous")(msg,conn);
-       }
-
+       
   // [ Afk ]
   if(isGroup){
       await require("./lib/function/afk")(msg,conn);
