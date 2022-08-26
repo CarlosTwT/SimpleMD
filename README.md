@@ -140,7 +140,8 @@ Iniciar y escanear QR<br />
 npm start
 ```
 
-# Gracias a
+# Many thanks to the creator of the base!!
+# Muchísimas gracias al creador de la base!!
 
 -   [`Senkuu`](https://github.com/xzeera-id)
 -   [`Senkuu`](https://wa.me/6281312960392)
