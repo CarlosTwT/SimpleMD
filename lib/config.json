@@ -1,19 +1,19 @@
 {
   "thumb": "https://telegra.ph/file/f9b2ed3ff30d538f086ae.jpg",
-  "namebot": "Senkuu",
+  "namebot": "Simple",
   "botNumber": "14162743926@s.whatsapp.net",
   "owner": ["593991398786@s.whatsapp.net"],
   "instagram": "https://instagram.com/c4rl0s_9e",
-  "author": "Carlos",
+  "author": "CRLS",
   "session": "simple-md",
   "email": "carlos.e.escobarmc@gmail.com",
   "self": false,
   "packInfo":{
-    "packname": "Simple-MD",
+    "packname": "",
     "author": "Beta ✓"
   },
   "ignore": {
 		"directory": ["umum"]
 	},
-	"timezone": "América/Guayaquil"
+	"timezone": "America/Guayaquil"
 }
