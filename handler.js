@@ -15,7 +15,7 @@ module.exports = handler = async (mek, conn, map) => {
   try {
     if(mek.type !== "notify") return;
     let msg = await serialize(JSON.parse(JSON.stringify(mek.messages[0])), conn);
-    const customLanguage = "es"
+    const customLanguage = "en"
     if(!msg.message) return;
     if(Object.keys(msg.message)[0] == "senderKeyDistributionMessage") delete msg.message.senderKeyDistributionMessage;
     if(Object.keys(msg.message)[0] == "messageContextInfo") delete msg.message.messageContextInfo;
@@ -85,8 +85,8 @@ module.exports = handler = async (mek, conn, map) => {
 			const cotent = content.caption || content.text || "";
 			if (options.isTranslate) {
 				const footer = content.footer || false;
-				const customLang = "es"
-				const language = "es"
+				const customLang = "en"
+				const language = "en"
 				if (customLang) {
 					if (footer) footer = await rzky.tools.translate(footer, language);
 					translate = await rzky.tools.translate(cotent, language);
@@ -103,7 +103,7 @@ module.exports = handler = async (mek, conn, map) => {
 			options.adReply
 				? (content.contextInfo = {
 						externalAdReply: {
-							title: "© Senkuu饺",
+							title: "© Simple饺",
 							mediaType: 1,
 							//renderLargerThumbnail: true,
 							showAdAttribution: true,
@@ -142,7 +142,7 @@ module.exports = handler = async (mek, conn, map) => {
 				});
 				options.userJid = conn.user.id;
 				const fromContent = await Baileys.generateWAMessageFromContent(jid, contentMsg, options);
-				fromContent.key.id = "SENKUU" + require("crypto").randomBytes(13).toString("hex").toUpperCase();
+				fromContent.key.id = "SIMPLE" + require("crypto").randomBytes(13).toString("hex").toUpperCase();
 				await conn.relayMessage(jid, fromContent.message, {
 					messageId: fromContent.key.id,
 					additionalAttributes,
@@ -172,7 +172,10 @@ module.exports = handler = async (mek, conn, map) => {
 	if(isGroup){
 		  await require("./lib/function/blacklist")(msg, conn);
 		}
-		
+       // [ Anonymous ]
+       require("./lib/function/anonymous")(msg,conn);
+
+
   // [ Afk ]
   if(isGroup){
       await require("./lib/function/afk")(msg,conn);
@@ -198,7 +201,7 @@ module.exports = handler = async (mek, conn, map) => {
 		}
 		if (require("awesome-phonenumber")("+" + msg.sender.split("@")[0]).getCountryCode() == "212") return;
 		
-	// [ Response ]
+	// [ Respuesta ]
 	global.respon = {
 	  wait: "Espere un momento, su solicitud está siendo procesada..",
 	  success: "Listo ✓",
@@ -216,11 +219,11 @@ module.exports = handler = async (mek, conn, map) => {
 	
 	// [ Global Error ]
 	global.error = (command, e, msg) => {
-	  error = "*error de comando*\n"
-	  error += "  × Rasgo : " + command + "\n\n"
+	  error = "*Command Error*\n"
+	  error += "  × Cmd : " + command + "\n\n"
 	  error += "*Registro de errores*\n"
 	  error += String(e)
-	  if(String(e).includes("No se pueden leer las propiedades 'data' de indefinido")) return msg.reply('no se encontraron medios, vuelva a enviar los medios')
+	  if(String(e).includes("No se puede leer la propiedad 'data' de indefinido")) return msg.reply('no se encontraron medios, vuelva a enviar los medios')
 	  else msg.reply(respon.error.cmd + "\n\nRegistros de errores:\n " + String(e))
 		conn.sendMessage(config.owner[0], {text: error});
 	};
@@ -252,13 +255,13 @@ module.exports = handler = async (mek, conn, map) => {
 	}
 	
 	if(options.isQuoted && !msg.quoted) {
-			await msg.reply(`Por favor responda el mensaje`);
+			await msg.reply(`Please reply message`);
 			return true;
 	}
 	
 	if(options.isMedia) {
-			let medianya = Media(options.isMedia ? options.isMedia : {});
-			if(typeof medianya[0] != "undefined" && !medianya.includes(msg.quoted ? msg.quoted.mtype : []))
+           let medianya = Media(options.isMedia ? options.isMedia : {});
+           if(typeof medianya[0] != "undefined" && !medianya.includes(msg.quoted ? msg.quoted.mtype : []))
 				return msg.reply(`Por favor responde *${medianya.map((a) => `${((aa = a.charAt(0).toUpperCase()), aa + a.slice(1).replace(/message/gi, ""))}`).join("/")}*`);
 		}
 		
