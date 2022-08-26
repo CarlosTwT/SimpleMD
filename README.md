@@ -1,7 +1,7 @@
-<h1 align='center'>Welcome👋 :wave:</h1>
+<h1 align='center'>Bienvenido👋 :wave:</h1>
 
 <div align="center">
-<img src="https://telegra.ph/file/3024b63e3b52707d6a696.jpg" alt="SIMPLE MD" width="300" />
+<img src="https://telegra.ph/file/c690c8293d8aa06491244.png" alt="SIMPLE MD" width="300" />
 <p align="center">
  <img src="https://komarev.com/ghpvc/?username=xzeera-id&color=blue&label=Views" />
  </p>
@@ -9,25 +9,25 @@
 <h1 align="center">SIMPLE MD</h1>
 </div>
 
-## Destacar
+## Cosas a destacar
 
--   [x] Uso sencillo
--   [x] Fácil de usar
--   [x] Fácil de mantener/reparar
--   [x] Luz
--   [x] Anti retraso
--   [x] Único
--   [x] No a la venta!
+- [x] Uso simple
+- [x] Fácil de usar
+- [x] Fácil de mantener/reparar
+- [x] Anti-retraso
+- [x] Único
+- [x] ¡Antiventas!
 
 # ¡Lee esto!
 
-- Nombre de sesión: simple.json
+- Cambiar [Config](https://github.com/CarlosTwT/SimpleMD/blob/main/lib/config.json)
+- Nombre de sesión: simple-md.json
 
 # corre en heroku
 
-WhatsApp Bot Multi Device
+Bot de WhatsApp multidispositivo
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/CarlosTwT/Simple-MD)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/CarlosTwT/SimpleMD)
 
 
 # Heroku Buildpack
@@ -37,18 +37,16 @@ WhatsApp Bot Multi Device
 | **FFMPEG** |[HERE](https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest) |
 | **IMAGEMAGICK** | [HERE](https://github.com/mcollina/heroku-buildpack-imagemagick.git) |
 | **Node.js**     | heroku/nodejs|
+| **WEBP**        | [HERE](https://github.com/clhuang/heroku-buildpack-webp-binaries.git) |
 
 ### Statistics
 
 [![GitHub Stats](https://github-readme-stats.vercel.app/api?username=CarlosTwT&show_icons=true&hide=issues&theme=radical)](https://github-readme-stats.vercel.app)
 [![Top Languages](https://github-readme-stats.vercel.app/api/top-langs?username=CarlosTwT&layout=compact&theme=radical)](https://github-readme-stats.vercel.app)
 
-## Request Fitur To
-[`Creator Here`](https://wa.me/593991398786?text=hola) 
-
 ## Instalación en Termux
 
-### Clone Repo
+### Clonar repositorio
 
 ```bash
 > pkg install
@@ -56,11 +54,11 @@ WhatsApp Bot Multi Device
 > pkg install git
 > pkg install ffmpeg && pkg install libwebp
 > pkg install nodejs
-> git clone https://github.com/CarlosTwT/Simple-MD
-> cd Simple-MD
+> git clone https://github.com/CarlosTwT/SimpleMD
+> cd SimpleMD
 > npm install
 > npm start
-# Escanea QR
+# Scan QR
 ```
 
 ## Instalación
@@ -86,12 +84,12 @@ pacman -S ffmpeg
 
 ### Install libWebP
 
--   Para usuarios de Windows,
+- Para usuarios de Windows,
 
-1.  Descargue libWebP para Windows desde [sini](https://developers.google.com/speed/webp/download)
+1. Descargue libWebP para Windows desde [aquí](https://developers.google.com/speed/webp/download)
 2.  Extraer a C:\
-3.  Cambie el nombre de la carpeta extraída a `libwebp`
-4.  Abra PowerShell y ejecute el siguiente comando;
+3. Cambie el nombre de la carpeta extraída a `libwebp`
+4. Abra PowerShell y ejecute el siguiente comando;
 
 ```cmd
 setx /m PATH "C:\libwebp\bin;%PATH%"
@@ -113,28 +111,28 @@ apt install libwebp-dev -y
 pacman -S libwebp
 ```
 
-### Clonar repositorio
+### Clone Repo
 
 ```bash
 # clone repo
-git clone --depth=1 https://github.com/xzeera-id/Senkuu-MD
+git clone --depth=1 https://github.com/CarlosTwT/SimpleMD
 
 # cambia tu posición en el directorio
-cd Simple-MD
+cd SimpleMD
 
 # instalar todos los módulos
 npm install
 # o
 yarn install
 
-# cuando biblioteca @adiwajshing/baileys de error, ejecute el siguiente código
+# cuando la biblioteca @adiwajshing/baileys de error, ejecute el siguiente código
 
 cd ./node_modules/@adiwajshing/baileys
 npm install -g typescript
 npm run build:tsc
 ```
 
-### Start Bot
+### Iniciar robot
 
 Iniciar y escanear QR<br />
 
@@ -142,6 +140,7 @@ Iniciar y escanear QR<br />
 npm start
 ```
 
-# Thanks To
+# Gracias a
 
+-   [`Senkuu`](https://github.com/xzeera-id)
 -   [`Senkuu`](https://wa.me/6281312960392)

@@ -23,7 +23,7 @@ global.printLog = async(isCmd, sender, msg, body, groupName, isGc) => {
 
 global.reloadFile = (file, options = {}) => {
     nocache(file, module => {
-    console.log(`El archivo "${file}" se ha actualizado!\nReiniciar!`)
+    console.log(`File "${file}" se ha actualizado!\nReiniciando!`)
     process.send("reset")
     })
 }

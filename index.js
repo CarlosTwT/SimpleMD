@@ -17,7 +17,7 @@ function start(file) {
 		stdio: ["inherit", "inherit", "inherit", "ipc"],
 	});
 	p.on("message", (data) => {
-		console.log("[RECIBIÓ]", data);
+		console.log("[RECEIVED]", data);
 		switch (data) {
 			case "reset":
 				p.kill();

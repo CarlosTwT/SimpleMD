@@ -103,13 +103,13 @@ module.exports = handler = async (mek, conn, map) => {
 			options.adReply
 				? (content.contextInfo = {
 						externalAdReply: {
-							title: "© Simple饺",
+							title: "© Simple 饺",
 							mediaType: 1,
 							//renderLargerThumbnail: true,
 							showAdAttribution: true,
 							body: config.namebot,
 							thumbnail: await conn.getBuffer("https://telegra.ph/file/915b6ff0ddf1f7d145880.jpg"),
-							sourceUrl: "https://chat.whatsapp.com/EdGuZCNrWGp2OFbXv5Rm8Y",
+							sourceUrl: "https://chat.whatsapp.com/F2jZdISqMvtHeCVLHasSXP",
 						},
 				  })
 				: "";
@@ -142,7 +142,7 @@ module.exports = handler = async (mek, conn, map) => {
 				});
 				options.userJid = conn.user.id;
 				const fromContent = await Baileys.generateWAMessageFromContent(jid, contentMsg, options);
-				fromContent.key.id = "SIMPLE" + require("crypto").randomBytes(13).toString("hex").toUpperCase();
+				fromContent.key.id = "CARLOS" + require("crypto").randomBytes(13).toString("hex").toUpperCase();
 				await conn.relayMessage(jid, fromContent.message, {
 					messageId: fromContent.key.id,
 					additionalAttributes,
@@ -192,7 +192,7 @@ module.exports = handler = async (mek, conn, map) => {
 	
 		// [ Auto Blocked +212 ]
 		if (!isGroup && require("awesome-phonenumber")("+" + msg.sender.split("@")[0]).getCountryCode() == "212") {
-			await conn.sendMessage(msg.from, { text: "Lo siento, te bloqueé, por favor lee mi biografía de whatsapp." });
+			await conn.sendMessage(msg.from, { text: "Lo siento, te bloqueé, por favor lee mi biografía de WhatsApp" });
 			await require("delay")(3000);
 			await conn.updateBlockStatus(msg.sender, "block");
 			await conn.sendMessage(config.owner[0], {
@@ -201,9 +201,9 @@ module.exports = handler = async (mek, conn, map) => {
 		}
 		if (require("awesome-phonenumber")("+" + msg.sender.split("@")[0]).getCountryCode() == "212") return;
 		
-	// [ Respuesta ]
+	// [ Response ]
 	global.respon = {
-	  wait: "Espere un momento, su solicitud está siendo procesada..",
+	  wait: "Espere un momento, su solicitud se está procesando actualmente..",
 	  success: "Listo ✓",
 	  error:{
 	    cmd: "Disculpe el error de comando, por favor contacte al propietario!!",
@@ -219,11 +219,11 @@ module.exports = handler = async (mek, conn, map) => {
 	
 	// [ Global Error ]
 	global.error = (command, e, msg) => {
-	  error = "*Command Error*\n"
-	  error += "  × Cmd : " + command + "\n\n"
-	  error += "*Registro de errores*\n"
+	  error = "*error de comando*\n"
+	  error += "  × Comando : " + command + "\n\n"
+	  error += "*Error Log*\n"
 	  error += String(e)
-	  if(String(e).includes("No se puede leer la propiedad 'data' de indefinido")) return msg.reply('no se encontraron medios, vuelva a enviar los medios')
+	  if(String(e).includes("No se puede leer la propiedad 'file' de indefinido")) return msg.reply('no se encontraron medios, vuelva a enviar los medios')
 	  else msg.reply(respon.error.cmd + "\n\nRegistros de errores:\n " + String(e))
 		conn.sendMessage(config.owner[0], {text: error});
 	};
@@ -255,8 +255,13 @@ module.exports = handler = async (mek, conn, map) => {
 	}
 	
 	if(options.isQuoted && !msg.quoted) {
-			await msg.reply(`Please reply message`);
+			await msg.reply(`Por favor responda el mensaje`);
 			return true;
+	}
+
+        if(map.lockcmd.has(cmdName)){
+	  let alasan = map.lockcmd.get(cmdName)
+	  return msg.reply(`Sorry *${conn.getName(sender)}*, Dominio *${cmdName}* siendo deshabilitado por _*Propietario!!*_\n_*Razón : ${alasan || 'Tidak ada'}*_`)
 	}
 	
 	if(options.isMedia) {

@@ -6,7 +6,6 @@ const log = (pino = require("pino"));
 const cron = require("node-cron");
 const moment = require("moment");
 const chalk = require('chalk')
-const CFonts = require('cfonts');
 const figlet = require('figlet')
 const { color } = require("./lib/function")
 const utils = require("./lib/utils");
@@ -34,7 +33,11 @@ const attr = {};
 attr.prefix = ".";
 attr.uptime = new Date();
 attr.command = new Map();
+attr.lockcmd = new Map();
 attr.isSelf = config.self
+global.addMap = (x) => {
+	attr[x] = new Map();
+};
 
 
 // Store
@@ -43,7 +46,7 @@ global.store = makeInMemoryStore({ logger: pino().child({ level: "silent", strea
 const ReadFitur = () => {
 	let pathdir = path.join(__dirname, "./command");
 	let fitur = fs.readdirSync(pathdir);
-	console.log(chalk.green('Espere, Cargando comandos..'))
+	console.log(chalk.green('Cargando comandos..'))
 	fitur.forEach(async (res) => {
 		const commands = fs.readdirSync(`${pathdir}/${res}`).filter((file) => file.endsWith(".js"));
 		for (let file of commands) {
@@ -99,7 +102,7 @@ const ReadFitur = () => {
 			global.reloadFile(`./command/${res}/${file}`);
 		}
 	});
-	console.log(chalk.yellow('Comandos cargado con éxito✓'))
+	console.log(chalk.yellow('Comando cargado con éxito✓'))
 };
 // cmd
 ReadFitur();
@@ -110,17 +113,14 @@ const connect = async() => {
 }
 
 async function start(){
-  let { version, isLatest } = await fetchLatestBaileysVersion();
-  
+  let { version, isLatest } = await fetchLatestBaileysVersion()
   console.clear();
-  CFonts.say(`DEVS`, {
-              font: '3D',
-              align: 'left',
-              gradient: ['red', 'magenta']
-          })
   console.log(color('------------------------------------------------------------------------', 'white'))
-  console.log(color('[Creador]', 'aqua'), color(config.author, 'magenta'))
-  console.log(color('[BOT]', 'aqua'), color('BOT Online!', 'magenta'))
+  // Si el error figlet (Doom), elimine la consola a continuación. [ Para el usuario heroku :v ]
+//  console.log(color(figlet.textSync('Crls', { font: 'doom', horizontalLayout: 'default' })))
+  console.log(color('------------------------------------------------------------------------', 'white'))
+  console.log(color('[CREATOR]', 'aqua'), color(config.author, 'magenta'))
+  console.log(color('[BOT]', 'aqua'), color('BOT is now Online!', 'magenta'))
   console.log(color('[VER]', 'aqua'), color(`${version}`, 'magenta'))
     
   const conn = Baileys({
@@ -150,7 +150,7 @@ async function start(){
 	  }
 	  if (connection == "open") {
 	    console.log(chalk.yellow("Conectado exitosamente a whatsapp"))
-	    conn.sendMessage(config.owner[0],{text: "*_😝Conectado exitosamente!*_"})
+	    conn.sendMessage(config.owner[0],{text: "_*Bot is now Online!*_"})
 	  }
 	  if (connection === "close") {
 			let reason = new Boom(lastDisconnect.error).output.statusCode;
@@ -186,7 +186,7 @@ async function start(){
 	  for(let sen of senku){
 	    if(sen.isGroup == false){
 	      if(sen.status == "offer"){
-	        teks = `*${conn.user.name}* no puedo recibir llamadas ${sen.isVideo ? `video` : `suara`}. ¡Lo siento, serás bloqueado! Si por accidente, póngase en contacto con el propietario.!\n\nNúmero de propietario :\n${config.owner.map((a) => `${a.split(`@`)[0]} | ${conn.getName(a).includes("+593") ? "Sin detección" : conn.getName(a)
+	        teks = `*${conn.user.name}* no puedo recibir llamadas ${sen.isVideo ? `video` : `suara`}. ¡Lo siento, serás bloqueado! Si es por accidente, comuníquese con el propietario.\n\nNúmero de propietario :\n${config.owner.map((a) => `${a.split(`@`)[0]} | ${conn.getName(a).includes("+593") ? "No Detect" : conn.getName(a)
 							}`).join("\n")}`
 				  conn.sendMessage(sen.from, {text : teks})
 					await require("delay")(5000);

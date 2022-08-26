@@ -1,4 +1,5 @@
 
+
 // BIG THANKS TO : RIZKYFDLH
 
 require('./global')
@@ -44,7 +45,7 @@ const ReadFitur = () => {
 				desc: "",
 				use: "",
 				type: "", // default: changelog
-				category: typeof command.category == "undefined" ? "Ninguna Categoria" : res.toLowerCase(),
+				category: typeof command.category == "undefined" ? "No Category" : res.toLowerCase(),
 				wait: false,
 				isOwner: false,
 				isAdmin: false,
@@ -111,7 +112,7 @@ const jadibot = async (msg, conn) => {
       let { version, isLatest } = await fetchLatestBaileysVersion();
       const conn = await makeWaSocket({
         auth: state,
-        browser: [`Jadibot`, "Safari", "1.0.0"],
+        browser: [`SimpleMD`, "Safari", "1.0.0"],
 	    	logger: log({ level: "silent" }),
 	    	version,
       })
@@ -124,18 +125,18 @@ const jadibot = async (msg, conn) => {
         const { lastDisconnect, connection } = up;
         if(connection == "connecting") return await msg.reply("_*Conexión a Jadibot..*_");
         if(connection){
-          if (connection != "connecting") console.log("Conectando a jadibot..")
+          if (connection != "connecting") console.log("Conexión a sub-bot..")
         }
         console.log(up)
-        if(up.qr) await sendFile(msg.from, await qrcode.toDataURL(up.qr,{scale : 8}),"", 'Escanea este QR para convertirte en un bot temporal\n\n1. Haga clic en los tres puntos en la esquina superior derecha\n2. Toque WhatsApp Web\n3. Escanea este QR \nQR Caduca en 20 segundos', msg)
+        if(up.qr) await sendFile(msg.from, await qrcode.toDataURL(up.qr,{scale : 8}),"", 'Escanea este QR para convertirte en un bot temporal\n\n1. Haz clic en los tres puntos en la esquina superior derecha\n2. Toca WhatsApp Web\n3. Escanea este QR \nQR Expirado en 20 segundos', msg)
         console.log(connection)
         if (connection == "open") {
           conn.id = decodeJid(conn.user.id)
           conn.time = Date.now()
           global.conns.push(conn)
-	  await msg.reply(`*Conectado a Whatsapp - Bot*\n\n*Usuario :*\n _*× id : ${decodeJid(conn.user.id)}*_`)
+	  await msg.reply(`*Conectado a Whatsapp - Bot*\n\n*User :*\n _*× id : ${decodeJid(conn.user.id)}*_`)
 	  user = `${decodeJid(conn.user.id)}`
-	  txt = `*Se detecto un sub-bot*\n\n _× Usuario : @${user.split("@")[0]}_`
+	  txt = `*Detectado montando a Jadibot*\n\n _× User : @${user.split("@")[0]}_`
 	  sendMessage(config.owner[0],{text: txt,  withTag : true})
         }
         if(connection == "close") {
@@ -147,7 +148,7 @@ const jadibot = async (msg, conn) => {
             msg.reply("_*El tiempo de conexión expiro..*_")
 			    	conn.logout()
           } else {
-            conn.end(`Motivo de desconexión desconocido: ${reason}|${lastDisconnect.error}`);
+            conn.end(`Unknown DisconnectReason: ${reason}|${lastDisconnect.error}`);
           }
         }
       })
