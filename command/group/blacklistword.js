@@ -50,15 +50,9 @@ module.exports = {
        if(!q) throw "Introduce palabras prohibidas!!"
        try {
          const word = JSON.parse(fs.readFileSync('./lib/database/toxic.json'))
-         if(word[from] == undefined) {
-           word[from] = {
-             kata: [],
-             warning: {}
-           }
-           await fs.writeFileSync('./lib/database/toxic.json',JSON.stringify(word))
-         }
          if(!word[from].kata.includes(q)) return msg.reply(`La palabra ${q} no en la lista negra de palabras!`)
          word[from].kata.splice(word[from].kata.indexOf(q), 1)
+         await fs.writeFileSync('./lib/database/toxic.json',JSON.stringify(word))
          reply(`La palabra ${q} eliminado con éxito de la lista negra de palabras`)
        } catch (e){
          global.error(command, e, msg)
