@@ -3,7 +3,7 @@
 <div align="center">
 <img src="https://telegra.ph/file/c690c8293d8aa06491244.png" alt="SIMPLE MD" width="300" />
 <p align="center">
- <img src="https://komarev.com/ghpvc/?username=xzeera-id&color=blue&label=Views" />
+ <img src="https://komarev.com/ghpvc/?username=CarlosTwT&color=pink&label=Vistas" />
  </p>
 </p>
 <h1 align="center">SIMPLE MD</h1>
