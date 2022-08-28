@@ -1,7 +1,7 @@
 module.exports = {
 	name: "vgif",
 	category: "converter",
-	desc: "Cambia el video a gif con audio",
+	desc: "Cambia el video a gif con sonido",
     isQuoted: true,
   isMedia: {
     isQVideo: true,
