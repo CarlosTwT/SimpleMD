@@ -21,7 +21,7 @@
 # ¡Lee esto!
 
 ## ✧✧✧ Por que usar este bot de base??
-```
+
 1. Libre de derechos de autor.
 2. Sin cifrado de código fuente (encriptacion).
 3. Comandos 100% funcionales.
@@ -34,34 +34,34 @@
 
 ✧ este proyecto está inspirado para que todos puedan empezar su propio bot...
 ✧ lo único que pido es que se dejen los creditos que corresponden!
-```
+
 
 # Creador de la base!!
-```
+
 -   [`Senkuu Github`](https://github.com/xzeera-id)
 -   [`Senkuu número`](https://wa.me/6281312960392)
-```
+
 
 # Recodificador
-```
+
 -   [`Carlos Github`](https://github.com/xzeera-id)
 -   [`Carlos Instagram`](https://instagram.com/c4rl0s_9e)
-```
+
 
 # Modificar
-```
+
 - Cambiar [Config](https://github.com/CarlosTwT/SimpleMD/blob/main/lib/config.json)
 - Nombre de sesión: simple-md.json
-```
+
 # corre en heroku
 
 # Bot de WhatsApp multidispositivo
-```
+
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/CarlosTwT/SimpleMD)
-```
+
 
 # Heroku Buildpack
-```
+
 | BuildPack | LINK |
 |--------|--------|
 | **FFMPEG** |[HERE](https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest) |
@@ -73,7 +73,7 @@
 
 [![GitHub Stats](https://github-readme-stats.vercel.app/api?username=CarlosTwT&show_icons=true&hide=issues&theme=radical)](https://github-readme-stats.vercel.app)
 [![Top Languages](https://github-readme-stats.vercel.app/api/top-langs?username=CarlosTwT&layout=compact&theme=radical)](https://github-readme-stats.vercel.app)
-```
+
 ## Instalación en Termux
 
 ### Clonar repositorio
