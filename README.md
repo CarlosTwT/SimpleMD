@@ -20,6 +20,32 @@
 
 # ¡Lee esto!
 
+## ✧✧✧ Por que usar este bot de base??
+```
+1. Libre de derechos de autor.
+2. Sin cifrado de código fuente (encriptacion).
+3. Comandos 100% funcionales.
+4. Prefijos simples (".").
+5. Auto restauración.
+6. No se necesita ApiKey!
+7. Permiso completo para recodificar.
+8. Se actualiza y mejora regularmente.
+9. Admite las últimas versiones de WhatsApp, GB, Fouad, Alpha, YoWhatsApp y todas las demás modificaciones (MD).
+
+✧ este proyecto está inspirado para que todos puedan empezar su propio bot...
+✧ lo único que pido es que se dejen los creditos que corresponden!
+
+# Creador de la base!!
+
+-   [`Senkuu Github`](https://github.com/xzeera-id)
+-   [`Senkuu número`](https://wa.me/6281312960392)
+
+# Recodificador
+
+-   [`Carlos Github`](https://github.com/xzeera-id)
+-   [`Carlos Instagram`](https://instagram.com/c4rl0s_9e)
+
+# Modificar
 - Cambiar [Config](https://github.com/CarlosTwT/SimpleMD/blob/main/lib/config.json)
 - Nombre de sesión: simple-md.json
 
@@ -140,8 +166,4 @@ Iniciar y escanear QR<br />
 npm start
 ```
 
-# Many thanks to the creator of the base!!
-# Muchísimas gracias al creador de la base!!
-
--   [`Senkuu`](https://github.com/xzeera-id)
--   [`Senkuu`](https://wa.me/6281312960392)
+## Gracias por usar este repositorio 
