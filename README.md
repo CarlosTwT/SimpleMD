@@ -33,6 +33,7 @@
 9. Admite las últimas versiones de WhatsApp, GB, Fouad, Alpha, YoWhatsApp y todas las demás modificaciones (MD).
 
 ✧ este proyecto está inspirado para que todos puedan empezar su propio bot...
+
 ✧ lo único que pido es que se dejen los creditos que corresponden!
 
 
