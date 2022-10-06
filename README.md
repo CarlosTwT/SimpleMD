@@ -72,8 +72,7 @@
 
 ### Statistics
 
-[![GitHub Stats](https://github-readme-stats.vercel.app/api?username=CarlosTwT&show_icons=true&hide=issues&theme=radical)](https://github-readme-stats.vercel.app)
-[![Top Languages](https://github-readme-stats.vercel.app/api/top-langs?username=CarlosTwT&layout=compact&theme=radical)](https://github-readme-stats.vercel.app)
+[![stats](https://github-readme-stats.vercel.app/api/wakatime?username=CarlosTwT)](https://github.com/anuraghazra/github-readme-stats)[![Top Languages](https://github-readme-stats.vercel.app/api/top-langs?username=CarlosTwT&layout=compact&theme=radical)](https://github-readme-stats.vercel.app)
 
 ## Instalación en Termux
 
